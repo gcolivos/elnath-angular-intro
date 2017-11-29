@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Intro</title>
+    <script src="vendors/angular.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+<body ng-app="MyApp" ng-controller="WelcomeController"></body> 
+    <!-- !!/ng-controller has to be inside of ng-app -->
+    <h1>Angular Intro</h1>
+    <div ng-controller="WelcomeController as vm">
+        {{vm.message}}
+        <input ng-model = "vm.message">
+        <button ng-click = "vm.greet()">Submit</button>
+        <br/>
+        {{vm.newThing}}
+        <br>
+        <input ng-model = "vm.newThing.name">
+        <input ng-model = "vm.newThing.happinessPoints">
+        <!-- The ng model on the input now sets the value to whatever we typed,  -->
+        <button ng-click="vm.addNewThing()">Submit</button>
+        <ul>
+            <li ng-repeat="thingy in vm.favoriteThings">
+                {{thingy.name}} provides Guillermo with {{thingy.happinessPoints}} amount of happiness.}}
+            </li>
+        </ul>
+    </div>
+    {{7+7}}
+</body>
+</html>
